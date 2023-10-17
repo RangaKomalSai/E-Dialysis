@@ -71,7 +71,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: (){},
+                    onTap: (){Navigator.pop(context);},
                     child: const Text(
                       'Create Account',
                       style: TextStyle(

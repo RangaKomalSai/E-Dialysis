@@ -1,5 +1,6 @@
 import 'package:edialysis/widgets/dropdown.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../widgets/button.dart';
 import '../widgets/textfield.dart';
@@ -46,7 +47,33 @@ class SignupPage extends StatelessWidget {
               const SizedBox(height: 20),
 
               //sign-in button
-              MyButton(text: 'Next', onTap: (){}, myIcon: Icons.arrow_forward,),
+              MyButton(
+                text: 'Next',
+                onTap: (){Navigator.of(context).pushNamed('/signup2');},
+                myIcon: Icons.arrow_forward,
+              ),
+
+              const SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Already have an account ? ',
+                    style: TextStyle(
+                        color: Colors.black,letterSpacing: 1
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){Navigator.of(context).pushNamed('/login');},
+                    child: const Text(
+                      'Login',
+                      style: TextStyle(
+                          color: Colors.blueAccent,
+                          fontWeight: FontWeight.bold ),
+                    ),
+                  ),
+                ],
+              ),
 
             ],
           ),

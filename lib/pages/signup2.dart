@@ -18,8 +18,10 @@ class Signup2 extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        leading: Icon(Icons.arrow_back_rounded, color: Colors.black,),
-
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_rounded, color: Colors.black),
+          onPressed: (){Navigator.pop(context);},
+        ),
       ),
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
@@ -56,8 +58,6 @@ class Signup2 extends StatelessWidget {
               //sign-in button
               MyButton(text: 'Signup', onTap: (){}, myIcon: Icons.arrow_forward,),
 
-              //register now button
-              const SizedBox(height: 20,),
             ],
           ),
         ),
