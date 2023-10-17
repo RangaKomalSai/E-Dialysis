@@ -37,15 +37,16 @@ class LoginPage extends StatelessWidget {
                   myHintText: 'Password',
                   textInputAction: TextInputAction.done,
                   keyboardType: TextInputType.text,
+                  isItPswd: true,
               ),
-              const SizedBox(height: 10,),
+              const SizedBox(height: 15,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
                     onTap: (){},
                     child: const Text(
-                      'Forgot Password?',
+                      'Forgot Password?  ',
                       style: TextStyle(
                         color: Colors.blueAccent,
                         fontWeight: FontWeight.bold ),
@@ -53,7 +54,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(height: 15,),
 
               //sign-in button
               MyButton(text: 'Login', onTap: (){}),
@@ -61,12 +62,12 @@ class LoginPage extends StatelessWidget {
               //register now button
               const SizedBox(height: 20,),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'New User?',
+                    'New User? ',
                     style: TextStyle(
-                      color: Colors.black
+                      color: Colors.black,letterSpacing: 1
                     ),
                   ),
                   GestureDetector(

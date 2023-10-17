@@ -4,15 +4,10 @@ import '../widgets/button.dart';
 import '../widgets/dropdown.dart';
 import '../widgets/textfield.dart';
 
-class Signup2 extends StatefulWidget {
+class Signup2 extends StatelessWidget {
 
   Signup2({super.key});
 
-  @override
-  State<Signup2> createState() => _Signup2State();
-}
-
-class _Signup2State extends State<Signup2> {
   final pswdController = TextEditingController();
 
   final pswdConfirmController = TextEditingController();
@@ -20,6 +15,12 @@ class _Signup2State extends State<Signup2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        leading: Icon(Icons.arrow_back_rounded, color: Colors.black,),
+
+      ),
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
         child: Padding(
@@ -50,10 +51,10 @@ class _Signup2State extends State<Signup2> {
                 keyboardType: TextInputType.text,
                 isItPswd: true,
               ),
-              const SizedBox(height: 10,),
+              const SizedBox(height: 20,),
 
               //sign-in button
-              MyButton(text: 'Next', onTap: (){}, myIcon: Icons.arrow_forward,),
+              MyButton(text: 'Signup', onTap: (){}, myIcon: Icons.arrow_forward,),
 
               //register now button
               const SizedBox(height: 20,),

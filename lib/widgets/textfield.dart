@@ -64,7 +64,7 @@ class _MyTextFieldState extends State<MyTextField> {
         )
       ),
       controller: widget.textEditingController,
-      obscureText: hidePswd,
+      obscureText: widget.isItPswd? hidePswd : false,
       textInputAction: widget.textInputAction,
       keyboardType: widget.keyboardType,
     );

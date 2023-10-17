@@ -43,13 +43,11 @@ class SignupPage extends StatelessWidget {
               const SizedBox(height: 10),
 
               MyDropDownList(),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
 
               //sign-in button
               MyButton(text: 'Next', onTap: (){}, myIcon: Icons.arrow_forward,),
 
-              //register now button
-              const SizedBox(height: 20,),
             ],
           ),
         ),
