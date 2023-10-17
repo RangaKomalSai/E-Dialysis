@@ -1,4 +1,6 @@
 import 'package:edialysis/pages/login_page.dart';
+import 'package:edialysis/pages/signup.dart';
+import 'package:edialysis/pages/signup2.dart';
 import 'package:edialysis/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: lightMode,
-      home: LoginPage(),
+      home: Signup2(),
     );
   }
 }

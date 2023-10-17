@@ -24,7 +24,7 @@ class LoginPage extends StatelessWidget {
                     fontSize: 35
                 ),
               ),
-              const SizedBox(height: 10,),
+              const SizedBox(height: 20,),
               MyTextField(
                   textEditingController: emailController,
                   myHintText: 'Email id',
@@ -37,7 +37,6 @@ class LoginPage extends StatelessWidget {
                   myHintText: 'Password',
                   textInputAction: TextInputAction.done,
                   keyboardType: TextInputType.text,
-                  myObscureText: true,
               ),
               const SizedBox(height: 10,),
               Row(
@@ -57,8 +56,30 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 20,),
 
               //sign-in button
-              MyButton(text: 'Login', onTap: (){})
+              MyButton(text: 'Login', onTap: (){}),
+
               //register now button
+              const SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  const Text(
+                    'New User?',
+                    style: TextStyle(
+                      color: Colors.black
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: const Text(
+                      'Create Account',
+                      style: TextStyle(
+                          color: Colors.blueAccent,
+                          fontWeight: FontWeight.bold ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
