@@ -16,12 +16,12 @@ class _MyDropDownListState extends State<MyDropDownList> {
     return Container(
       padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.black38),
+        border: Border.all(color: Color.fromRGBO(246, 82, 19, 0.4)),
         borderRadius: BorderRadius.circular(21),
         color: Colors.grey[200]
       ),
       child: DropdownButton(
-        hint: Text('Select your State', style: TextStyle(color: Colors.grey[600], fontSize: 16),),
+        hint: Text('Select your State', style: TextStyle(color: Color.fromRGBO(246, 82, 19, 0.6), fontSize: 16),),
         value: valueChoose,
         onChanged: (newValue){
           setState(() {

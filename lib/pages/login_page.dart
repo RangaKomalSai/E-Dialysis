@@ -10,7 +10,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Colors.grey[200],
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(18.0),
@@ -18,10 +18,11 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment:MainAxisAlignment.center,
             children: [
               const Text(
-                'LOGIN',
+                'Login',
                 style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 35
+                    fontFamily: 'Poppins',
+                    fontSize: 35,
+                  color: Color.fromRGBO(246, 82, 19, 1),
                 ),
               ),
               const SizedBox(height: 20,),
@@ -48,7 +49,7 @@ class LoginPage extends StatelessWidget {
                     child: const Text(
                       'Forgot Password?  ',
                       style: TextStyle(
-                        color: Colors.blueAccent,
+                        color: Color.fromRGBO(246, 82, 19, 1),
                         fontWeight: FontWeight.bold ),
                     ),
                   ),
@@ -75,7 +76,7 @@ class LoginPage extends StatelessWidget {
                     child: const Text(
                       'Create Account',
                       style: TextStyle(
-                          color: Colors.blueAccent,
+                          color: Color.fromRGBO(246, 82, 19, 1),
                           fontWeight: FontWeight.bold ),
                     ),
                   ),

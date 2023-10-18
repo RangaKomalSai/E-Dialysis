@@ -17,13 +17,13 @@ class Signup2 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey[200],
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_rounded, color: Colors.black),
           onPressed: (){Navigator.pop(context);},
         ),
       ),
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Colors.grey[200],
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(18.0),
@@ -31,10 +31,11 @@ class Signup2 extends StatelessWidget {
             mainAxisAlignment:MainAxisAlignment.center,
             children: [
               const Text(
-                'SIGNUP',
+                'Create Account',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 35
+                    fontSize: 35,
+                  color:Color.fromRGBO(246, 82, 19, 1),
                 ),
               ),
               const SizedBox(height: 20,),

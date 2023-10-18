@@ -13,7 +13,7 @@ class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Colors.grey[200],
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(18.0),
@@ -21,10 +21,11 @@ class SignupPage extends StatelessWidget {
             mainAxisAlignment:MainAxisAlignment.center,
             children: [
               const Text(
-                'SIGNUP',
+                'Create Account',
                 style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 35
+                    fontFamily: 'Poppins',
+                    fontSize: 35,
+                  color: Color.fromRGBO(246, 82, 19, 1),
                 ),
               ),
               const SizedBox(height: 20,),
@@ -68,7 +69,7 @@ class SignupPage extends StatelessWidget {
                     child: const Text(
                       'Login',
                       style: TextStyle(
-                          color: Colors.blueAccent,
+                          color: Color.fromRGBO(246, 82, 19, 1),
                           fontWeight: FontWeight.bold ),
                     ),
                   ),

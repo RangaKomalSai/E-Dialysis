@@ -18,7 +18,7 @@ class MyButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.0),
-          color: Theme.of(context).colorScheme.inversePrimary,
+          color: Color.fromRGBO(246, 82, 19, 1),
         ),
         padding: const EdgeInsets.all(25),
         child: Center(
@@ -27,15 +27,17 @@ class MyButton extends StatelessWidget {
             children: [
               Text(
                 text,
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
-                  fontWeight: FontWeight.bold,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'Poppins',
                   fontSize: 16,
                   letterSpacing: 1
                 ),
+                maxLines: null,
+                overflow: TextOverflow.visible,
               ),
-              SizedBox(width: 8,),
-              Icon(myIcon, color: Colors.white, weight: 2, size: 20,)
+                const SizedBox(width: 8,),
+                Icon(myIcon, color: Colors.white, weight: 2, size: 20,),
             ],
           ),
         ),

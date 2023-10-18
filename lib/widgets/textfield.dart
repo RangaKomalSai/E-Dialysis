@@ -33,7 +33,7 @@ class _MyTextFieldState extends State<MyTextField> {
         prefixIcon: widget.prefixIcon,
         hintText: widget.myHintText,
         hintStyle: TextStyle(
-          color: Colors.grey.shade600
+          color: Color.fromRGBO(246, 82, 19, 0.6),
         ),
         suffixIcon: widget.isItPswd?(hidePswd?
         IconButton(
@@ -41,23 +41,23 @@ class _MyTextFieldState extends State<MyTextField> {
           onPressed: (){setState(() {
             hidePswd = !hidePswd;
           });},
-          color: Colors.grey[600],
+          color: Color.fromRGBO(246, 82, 19, 0.7),
         ) : IconButton(
           icon: const Icon(Icons.visibility_off_rounded,size: 20,),
           onPressed: (){setState(() {
             hidePswd = !hidePswd;
           });},
-          color: Colors.grey[600],
+          color: Color.fromRGBO(246, 82, 19, 0.7),
         )) : null,
         filled: true,
         fillColor: Colors.grey[200],
-          enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.black38),
-            borderRadius: BorderRadius.circular(21),
-          ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: Color.fromRGBO(246, 82, 19, 0.6)),
+          borderRadius: BorderRadius.circular(21),
+        ),
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(
-              color: Colors.black,
+              color: Color.fromRGBO(246, 82, 19, 1),
               width: 2.0
           ),
           borderRadius: BorderRadius.circular(21),
