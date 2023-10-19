@@ -1,7 +1,11 @@
 import 'package:edialysis/pages/home_page.dart';
-import 'package:edialysis/pages/login_page.dart';
-import 'package:edialysis/pages/signup.dart';
-import 'package:edialysis/pages/signup2.dart';
+import 'package:edialysis/pages/logins/hp_login_page.dart';
+import 'package:edialysis/pages/logins/hp_signup.dart';
+import 'package:edialysis/pages/logins/hp_signup2.dart';
+import 'package:edialysis/pages/logins/hp_signup3.dart';
+import 'package:edialysis/pages/logins/login_page.dart';
+import 'package:edialysis/pages/logins/signup.dart';
+import 'package:edialysis/pages/logins/signup2.dart';
 import 'package:edialysis/pages/splash_screen.dart';
 import 'package:edialysis/themes/light_theme.dart';
 import 'package:flutter/material.dart';
@@ -19,13 +23,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       onGenerateRoute: (settings) {
         switch (settings.name) {
-          case '/signup2':
-            return PageTransition(
-              child: Signup2(),
-              type: PageTransitionType.rightToLeft,
-              duration: Duration(milliseconds: 400),
-              settings: settings,
-            );
           case '/login':
             return PageTransition(
               child: LoginPage(),
@@ -38,6 +35,48 @@ class MyApp extends StatelessWidget {
               child: SignupPage(),
               type: PageTransitionType.rightToLeft,
               duration: const Duration(milliseconds: 400),// Another example of transition
+              settings: settings,
+            );
+          case '/signup2':
+            return PageTransition(
+              child: Signup2(),
+              type: PageTransitionType.rightToLeft,
+              duration: const Duration(milliseconds: 400),
+              settings: settings,
+            );
+          case '/hp_login':
+            return PageTransition(
+              child: HpLoginPage(),
+              type: PageTransitionType.bottomToTop,
+              duration: const Duration(milliseconds: 400),// Another example of transition
+              settings: settings,
+            );
+          case '/hp_signup':
+            return PageTransition(
+              child: HpSignupPage(),
+              type: PageTransitionType.rightToLeft,
+              duration: const Duration(milliseconds: 400),// Another example of transition
+              settings: settings,
+            );
+          case '/hp_signup2':
+            return PageTransition(
+              child: HpSignup2(),
+              type: PageTransitionType.rightToLeft,
+              duration: const Duration(milliseconds: 400),// Another example of transition
+              settings: settings,
+            );
+          case '/hp_signup3':
+            return PageTransition(
+              child: HpSignup3(),
+              type: PageTransitionType.rightToLeft,
+              duration: const Duration(milliseconds: 400),
+              settings: settings,
+            );
+          case '/homepage':
+            return PageTransition(
+              child: HomePage(),
+              type: PageTransitionType.fade,
+              duration: const Duration(milliseconds: 400),
               settings: settings,
             );
           default:

@@ -1,16 +1,27 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/button.dart';
-import '../widgets/dropdown.dart';
-import '../widgets/textfield.dart';
+import '../../widgets/button.dart';
+import '../../widgets/dropdown.dart';
+import '../../widgets/textfield.dart';
 
-class Signup2 extends StatelessWidget {
-
+class Signup2 extends StatefulWidget {
   Signup2({super.key});
 
-  final pswdController = TextEditingController();
+  @override
+  State<Signup2> createState() => _Signup2State();
+}
 
+class _Signup2State extends State<Signup2> {
+  final pswdController = TextEditingController();
   final pswdConfirmController = TextEditingController();
+
+  @override
+  void dispose() {
+    // Dispose of the controllers when the widget is removed from the widget tree
+    pswdController.dispose();
+    pswdConfirmController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +68,7 @@ class Signup2 extends StatelessWidget {
               const SizedBox(height: 20,),
 
               //sign-in button
-              MyButton(text: 'Signup', onTap: (){}, myIcon: Icons.arrow_forward,),
+              MyButton(text: 'Signup', onTap: (){Navigator.of(context).pushNamed('/homepage');}, myIcon: Icons.arrow_forward,),
 
             ],
           ),

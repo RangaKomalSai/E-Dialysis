@@ -1,9 +1,9 @@
 import 'package:edialysis/pages/role_selection.dart';
-import 'package:edialysis/pages/signup.dart';
+import 'package:edialysis/pages/logins/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import 'login_page.dart';
+import 'logins/login_page.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});

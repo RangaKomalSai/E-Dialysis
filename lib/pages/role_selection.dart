@@ -19,15 +19,15 @@ class RoleSelection extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Text('Let\'s get started...', style: TextStyle(
+                const Text('Let\'s get started...', style: TextStyle(
                   fontSize: 16,
                   fontFamily: 'Ubuntu',
                   fontWeight: FontWeight.bold
                 ),),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 MyButton(text: 'I\'m a patient', onTap: (){Navigator.of(context).pushNamed('/signup');}, myIcon: null,),
-                SizedBox(height: 10,),
-                MyButton(text: 'I\'m a healthcare provider', onTap: (){Navigator.of(context).pushNamed('/signup');},myIcon: null,)
+                const SizedBox(height: 10,),
+                MyButton(text: 'I\'m a healthcare provider', onTap: (){Navigator.of(context).pushNamed('/hp_signup');},myIcon: null,)
               ],
             ),
           ),

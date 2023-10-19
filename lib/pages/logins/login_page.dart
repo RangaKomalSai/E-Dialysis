@@ -2,10 +2,25 @@ import 'package:edialysis/widgets/button.dart';
 import 'package:edialysis/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+
+  LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final pswdController = TextEditingController();
-  LoginPage({super.key});
+
+  @override
+  void dispose() {
+    // Dispose of the controllers when the widget is removed from the widget tree
+    pswdController.dispose();
+    emailController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +73,7 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 15,),
 
               //sign-in button
-              MyButton(text: 'Login', onTap: (){}),
+              MyButton(text: 'Login', onTap: (){Navigator.of(context).pushNamed('/homepage');}),
 
               //register now button
               const SizedBox(height: 20,),

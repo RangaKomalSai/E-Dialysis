@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/gnav.dart';
 import '../widgets/nav_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,30 +19,15 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        title: Text('E-Dialysis', style: TextStyle(color: Colors.black),),
+        title: const Text(
+          'E-Dialysis',
+           style: TextStyle(
+               color: Colors.black
+           ),
+        ),
         centerTitle: true,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        elevation: 0,
-        currentIndex: _currentIndex,
-        backgroundColor: Colors.white,
-        items: const[
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home_rounded),
-              label: '',
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: '',
-          )
-        ],
-        onTap: (index){
-          setState(() {
-            _currentIndex = index;
-            print('$index , $_currentIndex');
-          });
-        },
-      ),
+      bottomNavigationBar: MyGNav()
     );
   }
 }

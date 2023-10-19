@@ -2,13 +2,28 @@ import 'package:edialysis/widgets/dropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../widgets/button.dart';
-import '../widgets/textfield.dart';
+import '../../widgets/button.dart';
+import '../../widgets/textfield.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
+
+  SignupPage({super.key});
+
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
-  SignupPage({super.key});
+
+  @override
+  void dispose() {
+    // Dispose of the controllers when the widget is removed from the widget tree
+    nameController.dispose();
+    emailController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
