@@ -27,79 +27,83 @@ class _HpSignupPageState extends State<HpSignupPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      body: Column(
-        children: [
-          Container(
-              width: MediaQuery.sizeOf(context).width,
-              height: MediaQuery.sizeOf(context).height*0.3,
-              decoration: const BoxDecoration(
-                color: Colors.transparent,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                  width: MediaQuery.sizeOf(context).width,
+                  height: MediaQuery.sizeOf(context).height*0.3,
+                  decoration: const BoxDecoration(
+                    color: Colors.transparent,
+                  ),
+                  child: Lottie.network('https://lottie.host/5c143979-3cef-4808-87cc-13ef286a331c/HGZ7pWR3b8.json')
               ),
-              child: Lottie.network('https://lottie.host/5c143979-3cef-4808-87cc-13ef286a331c/HGZ7pWR3b8.json')
-          ),
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: Column(
-                mainAxisAlignment:MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Create Account',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 30,
-                      color: Color.fromRGBO(246, 82, 19, 1),
-                    ),
-                  ),
-                  const SizedBox(height: 20,),
-                  MyTextField(
-                      textEditingController: nameController,
-                      myHintText: 'Hospital name',
-                      textInputAction: TextInputAction.next,
-                      keyboardType: TextInputType.text
-                  ),
-                  const SizedBox(height: 10,),
-                  MyTextField(
-                      textEditingController: licenseController,
-                      myHintText: 'License number',
-                      textInputAction: TextInputAction.done,
-                      keyboardType: TextInputType.text
-                  ),
-                  const SizedBox(height: 20),
-
-                  //sign-in button
-                  MyButton(
-                    text: 'Next',
-                    onTap: (){Navigator.of(context).pushNamed('/hp_signup2');},
-                    myIcon: Icons.arrow_forward,
-                  ),
-
-                  const SizedBox(height: 20,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Column(
+                    mainAxisAlignment:MainAxisAlignment.center,
                     children: [
                       const Text(
-                        'Already have an account ? ',
+                        'Create Account',
                         style: TextStyle(
-                            color: Colors.black,letterSpacing: 1
+                          fontFamily: 'Poppins',
+                          fontSize: 30,
+                          color: Color.fromRGBO(246, 82, 19, 1),
                         ),
                       ),
-                      GestureDetector(
-                        onTap: (){Navigator.of(context).pushNamed('/hp_login');},
-                        child: const Text(
-                          'Login',
-                          style: TextStyle(
-                              color: Color.fromRGBO(246, 82, 19, 1),
-                              fontWeight: FontWeight.bold ),
-                        ),
+                      const SizedBox(height: 20,),
+                      MyTextField(
+                          textEditingController: nameController,
+                          myHintText: 'Hospital name',
+                          textInputAction: TextInputAction.next,
+                          keyboardType: TextInputType.text
+                      ),
+                      const SizedBox(height: 10,),
+                      MyTextField(
+                          textEditingController: licenseController,
+                          myHintText: 'License number',
+                          textInputAction: TextInputAction.done,
+                          keyboardType: TextInputType.text
+                      ),
+                      const SizedBox(height: 20),
+
+                      //sign-in button
+                      MyButton(
+                        text: 'Next',
+                        onTap: (){Navigator.of(context).pushNamed('/hp_signup2');},
+                        iconVisible: true,
+                      ),
+
+                      const SizedBox(height: 20,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'Already have an account ? ',
+                            style: TextStyle(
+                                color: Colors.black,letterSpacing: 1
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: (){Navigator.of(context).pushNamed('/hp_login');},
+                            child: const Text(
+                              'Login',
+                              style: TextStyle(
+                                  color: Color.fromRGBO(246, 82, 19, 1),
+                                  fontWeight: FontWeight.bold ),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                ],
+                ),
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

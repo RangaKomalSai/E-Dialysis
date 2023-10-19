@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class MyButton extends StatelessWidget {
   final String text;
   final void Function()? onTap;
-  final IconData? myIcon;
+  final bool iconVisible;
   const MyButton({
     super.key,
     required this.text,
     required this.onTap,
-    this.myIcon
+    required this.iconVisible
   });
 
   @override
@@ -25,19 +25,27 @@ class MyButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                text,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'Poppins',
-                  fontSize: 16,
-                  letterSpacing: 1
+              Flexible(
+                child: Text(
+                  text,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Poppins',
+                    fontSize: 16,
+                    letterSpacing: 1
+                  ),
+                  maxLines: null,
+                  overflow: TextOverflow.visible,
                 ),
-                maxLines: null,
-                overflow: TextOverflow.visible,
               ),
-                const SizedBox(width: 8,),
-                Icon(myIcon, color: Colors.white, weight: 2, size: 20,),
+              Visibility(
+                visible: iconVisible,
+                  child: const Icon(
+                    Icons.arrow_forward,
+                    color: Colors.white, weight: 2,
+                    size: 20,
+                  )
+              ),
             ],
           ),
         ),

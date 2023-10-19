@@ -25,9 +25,9 @@ class RoleSelection extends StatelessWidget {
                   fontWeight: FontWeight.bold
                 ),),
                 const SizedBox(height: 30,),
-                MyButton(text: 'I\'m a patient', onTap: (){Navigator.of(context).pushNamed('/signup');}, myIcon: null,),
+                MyButton(text: 'I\'m a patient', onTap: (){Navigator.of(context).pushNamed('/signup');}, iconVisible: false,),
                 const SizedBox(height: 10,),
-                MyButton(text: 'I\'m a healthcare provider', onTap: (){Navigator.of(context).pushNamed('/hp_signup');},myIcon: null,)
+                MyButton(text: 'I\'m a healthcare provider', onTap: (){Navigator.of(context).pushNamed('/hp_signup');},iconVisible: false,)
               ],
             ),
           ),

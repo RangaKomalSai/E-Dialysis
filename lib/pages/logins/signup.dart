@@ -66,7 +66,7 @@ class _SignupPageState extends State<SignupPage> {
               MyButton(
                 text: 'Next',
                 onTap: (){Navigator.of(context).pushNamed('/signup2');},
-                myIcon: Icons.arrow_forward,
+                iconVisible: true,
               ),
 
               const SizedBox(height: 20,),

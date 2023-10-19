@@ -73,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 15,),
 
               //sign-in button
-              MyButton(text: 'Login', onTap: (){Navigator.of(context).pushNamed('/homepage');}),
+              MyButton(text: 'Login', onTap: (){Navigator.of(context).pushNamed('/homepage');},iconVisible: false,),
 
               //register now button
               const SizedBox(height: 20,),

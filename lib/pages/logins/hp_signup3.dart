@@ -68,7 +68,7 @@ class _HpSignup3State extends State<HpSignup3> {
               const SizedBox(height: 20,),
 
               //sign-in button
-              MyButton(text: 'Signup', onTap: (){Navigator.of(context).pushNamed('/homepage');}, myIcon: Icons.arrow_forward,),
+              MyButton(text: 'Signup', onTap: (){Navigator.of(context).pushNamed('/homepage');},iconVisible: true,),
 
             ],
           ),
