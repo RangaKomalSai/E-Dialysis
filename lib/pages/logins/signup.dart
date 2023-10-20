@@ -1,5 +1,8 @@
+import 'package:edialysis/pages/logins/login_page.dart';
+import 'package:edialysis/pages/logins/signup2.dart';
 import 'package:edialysis/widgets/dropdown.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../../widgets/button.dart';
@@ -65,7 +68,7 @@ class _SignupPageState extends State<SignupPage> {
               //sign-in button
               MyButton(
                 text: 'Next',
-                onTap: (){Navigator.of(context).pushNamed('/signup2');},
+                onTap: (){Get.to(()=>Signup2(),transition: Transition.rightToLeft);},
                 iconVisible: true,
               ),
 
@@ -80,7 +83,8 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: (){Navigator.of(context).pushNamed('/login');},
+                    // onTap: (){Navigator.of(context).pushNamed('/login');},
+                    onTap: (){Get.to(()=>LoginPage(),transition: Transition.downToUp);},
                     child: const Text(
                       'Login',
                       style: TextStyle(

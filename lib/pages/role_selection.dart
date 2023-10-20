@@ -1,5 +1,8 @@
+import 'package:edialysis/pages/logins/hp_signup.dart';
+import 'package:edialysis/pages/logins/signup.dart';
 import 'package:edialysis/widgets/button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RoleSelection extends StatelessWidget {
   const RoleSelection({super.key});
@@ -25,9 +28,9 @@ class RoleSelection extends StatelessWidget {
                   fontWeight: FontWeight.bold
                 ),),
                 const SizedBox(height: 30,),
-                MyButton(text: 'I\'m a patient', onTap: (){Navigator.of(context).pushNamed('/signup');}, iconVisible: false,),
+                MyButton(text: 'I\'m a patient', onTap: (){Get.to(()=>SignupPage(),transition: Transition.fade);}, iconVisible: false,),
                 const SizedBox(height: 10,),
-                MyButton(text: 'I\'m a healthcare provider', onTap: (){Navigator.of(context).pushNamed('/hp_signup');},iconVisible: false,)
+                MyButton(text: 'I\'m a healthcare provider', onTap: (){Get.to(()=>HpSignupPage(),transition: Transition.fade);},iconVisible: false,)
               ],
             ),
           ),

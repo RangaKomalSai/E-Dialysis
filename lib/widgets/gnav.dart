@@ -27,6 +27,10 @@ class MyGNav extends StatelessWidget {
                   text: 'Home',
                 ),
                 GButton(
+                  icon: Icons.list_alt_rounded,
+                  text: 'Bookings',
+                ),
+                GButton(
                   icon: Icons.person,
                   text: 'Profile',
                 )

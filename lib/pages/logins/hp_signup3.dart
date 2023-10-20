@@ -1,4 +1,6 @@
+import 'package:edialysis/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../widgets/button.dart';
 import '../../widgets/dropdown.dart';
@@ -31,7 +33,7 @@ class _HpSignup3State extends State<HpSignup3> {
         backgroundColor: Colors.grey[200],
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_rounded, color: Colors.black),
-          onPressed: (){Navigator.pop(context);},
+          onPressed: (){Get.back();},
         ),
       ),
       backgroundColor: Colors.grey[200],
@@ -68,7 +70,7 @@ class _HpSignup3State extends State<HpSignup3> {
               const SizedBox(height: 20,),
 
               //sign-in button
-              MyButton(text: 'Signup', onTap: (){Navigator.of(context).pushNamed('/homepage');},iconVisible: true,),
+              MyButton(text: 'Signup', onTap: (){Get.to(()=>HomePage(),transition: Transition.zoom);},iconVisible: true,),
 
             ],
           ),

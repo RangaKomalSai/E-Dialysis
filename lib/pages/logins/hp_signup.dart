@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import '../../widgets/button.dart';
 import '../../widgets/textfield.dart';
+import 'package:get/get.dart';
+
+import 'hp_login_page.dart';
+import 'hp_signup2.dart';
 
 class HpSignupPage extends StatefulWidget {
 
@@ -72,7 +76,7 @@ class _HpSignupPageState extends State<HpSignupPage> {
                       //sign-in button
                       MyButton(
                         text: 'Next',
-                        onTap: (){Navigator.of(context).pushNamed('/hp_signup2');},
+                        onTap: (){Get.to(()=>HpSignup2(),transition: Transition.rightToLeft);},
                         iconVisible: true,
                       ),
 
@@ -87,7 +91,7 @@ class _HpSignupPageState extends State<HpSignupPage> {
                             ),
                           ),
                           GestureDetector(
-                            onTap: (){Navigator.of(context).pushNamed('/hp_login');},
+                            onTap: (){Get.to(()=>HpLoginPage(),transition: Transition.downToUp);},
                             child: const Text(
                               'Login',
                               style: TextStyle(

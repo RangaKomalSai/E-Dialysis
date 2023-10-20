@@ -1,7 +1,9 @@
+import 'package:edialysis/pages/home_page.dart';
 import 'package:edialysis/widgets/button.dart';
 import 'package:edialysis/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:get/get.dart';
 
 class HpLoginPage extends StatefulWidget {
 
@@ -85,7 +87,7 @@ class _HpLoginPageState extends State<HpLoginPage> {
                       const SizedBox(height: 15,),
 
                       //sign-in button
-                      MyButton(text: 'Login', onTap: (){Navigator.of(context).pushNamed('/homepage');},iconVisible: false,),
+                      MyButton(text: 'Login', onTap: (){Get.to(()=>HomePage(),transition: Transition.zoom);},iconVisible: false,),
 
                       //register now button
                       const SizedBox(height: 20,),
@@ -99,7 +101,7 @@ class _HpLoginPageState extends State<HpLoginPage> {
                             ),
                           ),
                           GestureDetector(
-                            onTap: (){Navigator.pop(context);},
+                            onTap: (){Get.back();},
                             child: const Text(
                               'Create Account',
                               style: TextStyle(

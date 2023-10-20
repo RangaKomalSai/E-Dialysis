@@ -1,3 +1,4 @@
+import 'package:edialysis/widgets/mytext.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/gnav.dart';
@@ -16,17 +17,21 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[100],
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        title: const Text(
-          'E-Dialysis',
-           style: TextStyle(
-               color: Colors.black
-           ),
+        title: const MyText(
+          text: 'E-Dialysis',
+          textStyle: TextStyle(
+            fontFamily: 'Poppins',
+            color: Colors.black,
+            fontWeight: FontWeight.bold
+          ),
         ),
         centerTitle: true,
       ),
+
       bottomNavigationBar: MyGNav()
     );
   }
