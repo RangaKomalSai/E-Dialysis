@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 
 class MyDropDownList extends StatefulWidget {
-  const MyDropDownList({super.key});
+  final String? selectedValue;
+  final Function(String) onValueChanged;
+  const MyDropDownList({super.key, this.selectedValue, required this.onValueChanged});
 
   @override
   State<MyDropDownList> createState() => _MyDropDownListState();
 }
 
 class _MyDropDownListState extends State<MyDropDownList> {
+
+  @override
+  void initState() {
+    super.initState();
+    valueChoose = widget.selectedValue;
+  }
 
   String? valueChoose;
   List states = ['Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jammu & Kashmir', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh','Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim','Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal'];
@@ -26,6 +34,7 @@ class _MyDropDownListState extends State<MyDropDownList> {
         onChanged: (newValue){
           setState(() {
             valueChoose = newValue as String;
+            widget.onValueChanged(valueChoose!);
           });
       },
         items: states.map((valueItem){

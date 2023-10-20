@@ -7,15 +7,25 @@ import '../../widgets/dropdown.dart';
 import '../../widgets/textfield.dart';
 
 class HpSignup2 extends StatefulWidget {
+  final String name;
+  final String license;
 
-  HpSignup2({super.key});
+  HpSignup2({super.key, required this.name, required this.license});
 
   @override
   State<HpSignup2> createState() => _HpSignup2State();
 }
 
 class _HpSignup2State extends State<HpSignup2> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final addressController = TextEditingController();
+  String? selectedState;
+
+  void onStateChanged(String newValue) {
+    setState(() {
+      selectedState = newValue;
+    });
+  }
 
   @override
   void dispose() {
@@ -38,33 +48,54 @@ class _HpSignup2State extends State<HpSignup2> {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(18.0),
-          child: Column(
-            mainAxisAlignment:MainAxisAlignment.center,
-            children: [
-              const Text(
-                'Just a step away...',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
-                  color:Color.fromRGBO(246, 82, 19, 1),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment:MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Just a step away...',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                    color:Color.fromRGBO(246, 82, 19, 1),
+                  ),
                 ),
-              ),
-              const SizedBox(height: 20,),
-              MyTextField(
-                textEditingController: addressController,
-                myHintText: 'Complete Address',
-                textInputAction: TextInputAction.next,
-                keyboardType: TextInputType.text,
-              ),
-              const SizedBox(height: 10,),
+                const SizedBox(height: 20,),
+                MyTextField(
+                  textEditingController: addressController,
+                  myHintText: 'Complete Address',
+                  textInputAction: TextInputAction.next,
+                  keyboardType: TextInputType.text,
+                    validator: (address) {
+                      if(address!.isEmpty){
+                        return 'Address cannot be empty';}
+                      return null;
+                    }
+                ),
+                const SizedBox(height: 10,),
 
-              const MyDropDownList(),
-              const SizedBox(height: 20,),
+                MyDropDownList(selectedValue: selectedState,
+                  onValueChanged: onStateChanged,),
+                const SizedBox(height: 20,),
 
-              //sign-in button
-              MyButton(text: 'Next', onTap: (){Get.to(()=>HpSignup3(),transition: Transition.rightToLeft);}, iconVisible: true,),
+                //sign-in button
+                MyButton(
+                  text: 'Next',
+                  onTap: (){
+                    if (_formKey.currentState!.validate()){
+                      Get.to(() =>
+                          HpSignup3(
+                              name: widget.name,
+                              license: widget.license,
+                              address: addressController.text,
+                              state: selectedState!),
+                          transition: Transition.rightToLeft);
+                    }},
+                  iconVisible: true,),
 
-            ],
+              ],
+            ),
           ),
         ),
       ),

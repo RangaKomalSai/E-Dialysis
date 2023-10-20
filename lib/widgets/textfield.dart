@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyTextField extends StatefulWidget {
+  final String? Function(String?)? validator;
   final TextEditingController textEditingController;
   final Widget? prefixIcon;
   final String myHintText;
@@ -15,7 +16,7 @@ class MyTextField extends StatefulWidget {
     required this.myHintText,
     required this.textInputAction,
     required this.keyboardType,
-    this.isItPswd = false,
+    this.isItPswd = false, this.validator,
   });
 
   @override
@@ -27,7 +28,8 @@ class _MyTextFieldState extends State<MyTextField> {
   bool hidePswd = true;
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: widget.validator,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.fromLTRB(20, 25, 0, 25),
         prefixIcon: widget.prefixIcon,

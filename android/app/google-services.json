@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "899885306576",
+    "project_id": "e-dialysis-d9c02",
+    "storage_bucket": "e-dialysis-d9c02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899885306576:android:1b1402d6d4ccfac4f304d5",
+        "android_client_info": {
+          "package_name": "com.example.edialysis"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeHXF73y2DOeR4LTiiPMIlvh7FCI4ABgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,9 @@
+import 'package:edialysis/pages/home_page.dart';
 import 'package:edialysis/pages/role_selection.dart';
 import 'package:edialysis/pages/logins/signup.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 import 'logins/login_page.dart';
@@ -13,18 +16,35 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  bool userLoggedIn = false;
+
   @override
   void initState() {
     super.initState();
-
-    // Add a delay of 4 seconds before navigating to the login page
-    Future.delayed(Duration(seconds: 3), () {
-      // Navigate to the login page
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => RoleSelection()),
-      );
+    Future.delayed(Duration(seconds: 4), () {
+      checkUserAndNavigate();
     });
   }
+
+  void checkUserAndNavigate() async {
+    userLoggedIn = await isUserLoggedIn();
+    _whichScreenToDisplay();
+  }
+
+  Future<bool> isUserLoggedIn() async {
+    final user = _auth.currentUser;
+    return user != null;
+  }
+
+  void _whichScreenToDisplay() {
+    if (userLoggedIn) {
+      Get.offAll(() => HomePage());
+    } else {
+      Get.offAll(() => RoleSelection());
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

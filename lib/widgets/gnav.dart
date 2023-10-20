@@ -1,3 +1,4 @@
+import 'package:edialysis/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -17,7 +18,7 @@ class MyGNav extends StatelessWidget {
               gap: 8,
               haptic: true,
               color: Colors.grey[800],
-              activeColor: Color.fromRGBO(246, 82, 19, 1),
+              activeColor: rPrimary,
               tabBackgroundColor: Color.fromRGBO(246, 82, 19, 0.1),
               iconSize: 24,
               padding: EdgeInsets.all(16),
